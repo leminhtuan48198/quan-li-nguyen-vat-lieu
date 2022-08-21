@@ -55,11 +55,6 @@ public class Main {
                     System.out.println("Moi ban nhap so");
             }
         } while (choice != 0);
-//        addCrispyFlour(materialManager);
-//        addMeat(materialManager);
-//
-//        System.out.println(materialManager.getDifference());
-//        System.out.println(materialManager);
 
     }
 
@@ -128,12 +123,7 @@ public class Main {
         int cost= scanner.nextInt();
         System.out.println("Moi ban nhap so luong");
         double quantity=scanner.nextDouble();
-        CrispyFlour bot1 = new CrispyFlour();
-        bot1.setId(id);
-        bot1.setName(name);
-        bot1.setCost(cost);
-        bot1.setQuantity(quantity);
-        bot1.setManufacturingDate(LocalDate.of(year,month,day));
+        CrispyFlour bot1 = new CrispyFlour(id,name,LocalDate.of(year,month,day),cost,quantity);
         return bot1;
     }
     private static Material getMaterialMeat() {
@@ -154,12 +144,7 @@ public class Main {
         int cost= scanner.nextInt();
         System.out.println("Moi ban nhap can nang");
         double weight=scanner.nextDouble();
-        Meat meat = new Meat();
-        meat.setId(id);
-        meat.setName(name);
-        meat.setCost(cost);
-        meat.setWeight(weight);
-        meat.setManufacturingDate(LocalDate.of(year,month,day));
+        Meat meat = new Meat(id,name,LocalDate.of(year,month,day),cost,weight);
         return meat;
     }
 
