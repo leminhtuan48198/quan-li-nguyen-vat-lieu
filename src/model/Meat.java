@@ -2,11 +2,12 @@ package model;
 
 import model.Material;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import static model.Date.convertDateToDays;
 
-public class Meat extends Material implements Discount {
+public class Meat extends Material implements Discount, Serializable {
     public static final int FIVE_DAYS = 5;
     public static final double DISCOUNT_30 = 0.3;
     public static final double DISCOUNT_10 = 0.1;

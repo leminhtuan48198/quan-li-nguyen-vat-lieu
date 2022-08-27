@@ -5,12 +5,14 @@ import controller.MaterialManager;
 import model.CrispyFlour;
 import model.Material;
 import model.Meat;
+import storage.ReadWriteFile;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-//    public static List<Material> materialList = MaterialManager.materialList;
+    public static List<Material> materialList = MaterialManager.materialList;
 
 
     public static void main(String[] args) {
@@ -45,11 +47,13 @@ public class Main {
                     break;
                 case 7:
                     delete(materialManager, scanner);
-                    int index;
+
                     break;
                 case 8:
                     change(materialManager, scanner);
                     break;
+                case 0:
+                    System.exit(0);
 
                 default:
                     System.out.println("Moi ban nhap so");
@@ -67,12 +71,14 @@ public class Main {
             addCrispyFlourIndex( index-1, materialManager);
         } else if(material instanceof Meat){
             addMeatIndex( index-1, materialManager);}
+        ReadWriteFile.writeFile(materialList);
     }
 
     private static void delete(MaterialManager materialManager, Scanner scanner) {
         System.out.println("Moi ban nhap vi tri can xoa");
         int index= scanner.nextInt();
         materialManager.removeMaterial(index-1);
+        ReadWriteFile.writeFile(materialList);
     }
 
     private static void displayMenu() {

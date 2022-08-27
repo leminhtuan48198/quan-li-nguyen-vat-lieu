@@ -1,5 +1,7 @@
 package model;
 
-public interface Discount {
+import java.io.Serializable;
+
+public interface Discount extends Serializable {
     double getRealMoney();
 }

@@ -1,10 +1,11 @@
 package model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import static model.Date.convertDateToDays;
 
-public class CrispyFlour extends Material implements Discount {
+public class CrispyFlour extends Material implements Discount, Serializable {
     public static final int TWO_MONTHS = 60;
     public static final int FOUR_MONTHS = 120;
     public static final double DISCOUNT_40 = 0.4;

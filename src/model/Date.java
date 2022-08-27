@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Date {
+public class Date implements Serializable {
 
     public static final int DAY_PER_NOT_LEAP_YEAR = 365;
 
